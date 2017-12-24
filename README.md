@@ -5,5 +5,4 @@ Add javascript to Chrome bookmark.
 # Support websites
 * twitter
 * plurk
-* pixiv
 * e-hentai
