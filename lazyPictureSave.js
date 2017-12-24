@@ -13,15 +13,15 @@ javascript:
 			targetLink.download = splitImageUrl[1].split("/")[4];
 			break;
 
-		case "www.pixiv.net":
-			switch(imageUrl.split('&')[0]){
-				case "https://www.pixiv.net/member_illust.php?mode=manga_big":
-					targetLink.href = document.getElementsByTagName("img")[0].src;
-					break;
-				case "https://www.pixiv.net/member_illust.php?mode=medium":
-					targetLink.href = document.getElementsByClassName('original-image')[0].getAttribute('data-src');
-					break;
-			}
+		// case "www.pixiv.net":
+		// 	switch(imageUrl.split('&')[0]){
+		// 		case "https://www.pixiv.net/member_illust.php?mode=manga_big":
+		// 			targetLink.href = document.getElementsByTagName("img")[0].src;
+		// 			break;
+		// 		case "https://www.pixiv.net/member_illust.php?mode=medium":
+		// 			targetLink.href = document.getElementsByClassName('original-image')[0].getAttribute('data-src');
+		// 			break;
+		// 	}
 
 			var pixivSrcName = targetLink.href.split('/');
 			targetLink.download = pixivSrcName[pixivSrcName.length - 1];
@@ -38,6 +38,7 @@ javascript:
 			targetLink.download = splitImageUrl[splitImageUrl.length - 1];
 			break;
 	}
-
+	document.body.appendChild(targetLink);
 	targetLink.click();
+	targetLink.remove();
 })()
