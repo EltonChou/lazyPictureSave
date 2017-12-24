@@ -17,25 +17,26 @@ javascript:
 			switch(imageUrl.split('&')[0]){
 				case "https://www.pixiv.net/member_illust.php?mode=manga_big":
 					targetLink.href = document.getElementsByTagName("img")[0].src;
-					break
+					break;
 				case "https://www.pixiv.net/member_illust.php?mode=medium":
 					targetLink.href = document.getElementsByClassName('original-image')[0].getAttribute('data-src');
-					break
+					break;
 			}
 
 			var pixivSrcName = targetLink.href.split('/');
 			targetLink.download = pixivSrcName[pixivSrcName.length - 1];
-			break
+			break;
 
 		case "exhentai.org":
-			targetLink = document.querySelector("#i7 a")
-			break
+		case "e-hentai.org":
+			targetLink = document.querySelector("#i7 a");
+			break;
 
 		case "images.plurk.com":
 		case "cdn.discordapp.com":
 			splitImageUrl = imageUrl.split('/');
 			targetLink.download = splitImageUrl[splitImageUrl.length - 1];
-			break
+			break;
 	}
 
 	targetLink.click();
